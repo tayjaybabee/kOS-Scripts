@@ -38,7 +38,7 @@ function doPreFlight {
 
     IF countdown = 11 {
       PRINT "Turning on lights...".
-      PRINT "Lights on:?" + LIGHTS. 
+      PRINT "Lights on:?" + LIGHTS.
       LIGHTS ON.
     }
 
@@ -50,8 +50,8 @@ function doPreFlight {
 
     IF countdown = 9 {
       PRINT "Setting target to the Mun".
-      LOCK    
-
+      LOCK STEERING TO UP.
+    }
     WAIT 1. // pauses the script here for 1 second.
   }
 }
