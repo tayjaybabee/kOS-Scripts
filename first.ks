@@ -35,19 +35,25 @@ function welcome {
 function doPreFlight {
   FROM {local countdown is 12.} UNTIL countdown = 0 STEP {SET countdown to countdown - 1.} DO {
     PRINT "..." + countdown.
-
+
+    // Set up steps to be performed as the
+    // countdown goes from 12 to 0.
+
+    // Turn on lights
     IF countdown = 11 {
       PRINT "Turning on lights...".
       PRINT "Lights on:?" + LIGHTS.
       LIGHTS ON.
     }
 
+    // Locking throttle to 1 or 100%
     IF countdown = 10 {
       PRINT "Locking throttle to 100%".
       LOCK THROTTLE TO 1.0.
       PRINT "Throttle set to:" + THROTTLE.
     }
 
+    // Locking steering to 'up'
     IF countdown = 9 {
       PRINT "Setting target to the Mun".
       LOCK STEERING TO UP.
